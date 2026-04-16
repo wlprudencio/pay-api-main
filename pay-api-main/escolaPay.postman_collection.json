@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "c4313f30-842b-4f49-aef7-47d9ae5f5a92",
+		"name": "escolaPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36784660"
+	},
+	"item": [
+		{
+			"name": "aluno",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"José\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"dataNascimento\": \"10/10/2000\",\r\n    \"telefone\": \"(32) 99144-0400\",\r\n    \"endereco\": {\r\n        \"cep\": \"36051320\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/aluno",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aluno"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

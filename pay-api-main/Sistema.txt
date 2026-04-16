@@ -1,0 +1,112 @@
+Entidades e Atributos
+Aluno
+
+    ID_Aluno (chave primária)
+    Nome
+    Data_Nascimento
+    Endereço
+    Telefone
+    Email
+
+Professor
+
+    ID_Professor (chave primária)
+    Nome
+    Especialidade
+    Data_Nascimento
+    Endereço
+    Telefone
+    Email
+
+Disciplina
+
+    ID_Disciplina (chave primária)
+    Nome
+    Carga_Horária
+
+Turma
+
+    ID_Turma (chave primária)
+    Ano
+    Semestre
+    Turno
+
+Matéria
+
+    ID_Matéria (chave primária)
+    Nome
+    ID_Disciplina (chave estrangeira referenciando Disciplina)
+
+Nota
+
+    ID_Nota (chave primária)
+    ID_Aluno (chave estrangeira referenciando Aluno)
+    ID_Matéria (chave estrangeira referenciando Matéria)
+    Nota
+    Data
+
+Frequência
+
+    ID_Frequência (chave primária)
+    ID_Aluno (chave estrangeira referenciando Aluno)
+    ID_Turma (chave estrangeira referenciando Turma)
+    Data
+    Presença (booleano ou indicador de presença/ausência)
+
+Aula
+
+    ID_Aula (chave primária)
+    ID_Turma (chave estrangeira referenciando Turma)
+    ID_Professor (chave estrangeira referenciando Professor)
+    ID_Matéria (chave estrangeira referenciando Matéria)
+    Data
+    Horário
+
+Relacionamentos
+Aluno - Frequência:
+
+    Um aluno pode ter várias entradas de frequência.
+    Relacionamento 1
+    (um aluno pode estar presente ou ausente em várias datas de frequência).
+
+Aluno - Nota:
+
+    Um aluno pode ter várias notas em diferentes matérias.
+    Relacionamento 1
+    (um aluno pode ter várias notas em várias matérias).
+
+Professor - Aula:
+
+    Um professor pode lecionar várias aulas.
+    Relacionamento 1
+    (um professor pode dar várias aulas em diferentes turmas e matérias).
+
+Turma - Aula:
+
+    Uma turma pode ter várias aulas.
+    Relacionamento 1
+    (uma turma pode ter várias aulas em diferentes datas).
+
+Matéria - Aula:
+
+    Uma matéria pode ser lecionada em várias aulas.
+    Relacionamento 1
+    (uma matéria pode ser abordada em várias aulas).
+
+Disciplina - Matéria:
+
+    Uma disciplina pode conter várias matérias.
+    Relacionamento 1
+    (uma disciplina pode ter várias matérias associadas).
+
+Turma - Aluno:
+
+    Uma turma pode ter vários alunos.
+    Relacionamento 1
+    (uma turma pode ter vários alunos matriculados).
+
+Turma - Professor:
+
+    Uma turma pode ter vários professores ao longo do ano.
+    Relacionamento M
+    (uma turma pode ter vários professores, e um professor pode lecionar em várias turmas).
